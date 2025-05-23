@@ -1,9 +1,63 @@
+/* --- Boho Aesthetic Styles --- */
+
+/* Use a soft, boho-inspired font for the whole site */
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif; /* Use a simple, soft font */
+  background-color: #f8f5f2; /* Very light beige background for boho feel */
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+
+/* Add a faded and blurred island.jpg as the website background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('island.jpg'); /* This uses your island.jpg image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(4px);      /* Makes the image blurry for a dreamy effect */
+  z-index: -1;
+  opacity: 0.7;          /* Makes the image faded so text is easy to read */
+  pointer-events: none;   /* Lets you click through the background */
+  transition: opacity 0.3s;
+}
+
+/* All main text in soft boho green */
+body, h1, h2, h3, h4, h5, h6, p, li, a {
+  color: #81b14f;
+}
+
+/* Main title in deep earthy brown */
+h1 {
+  font-size: 2em;
+  color: #451b04;
+  letter-spacing: 2px;
+  font-family: 'Georgia', serif; /* Boho serif for title */
+}
+
+/* Section titles in warm brown */
+h2 {
+  font-size: 1.3em;
+  color: #a86b32;
+  letter-spacing: 1px;
+  font-family: 'Georgia', serif;
+}
+
 /* Header and navigation styles */
 header {
-  background-color: #2e7d32;
+  background-color: #f3e9e0; /* Soft boho beige */
   padding: 15px 0;
-  border-radius: 8px; /* Less curved corners */
-  margin-bottom: 24px; /* Space below the header */
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(168, 107, 50, 0.08);
+  border: 1.5px solid #e2c9b0;
 }
 nav ul {
   list-style: none;
@@ -13,63 +67,119 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
-  margin: 0 15px;
+  margin: 0 18px;
 }
 nav ul li a {
-  color: #fff;
+  color: #a86b32;
   text-decoration: none;
   font-weight: bold;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+nav ul li a:hover {
+  color: #81b14f;
 }
 
-/* Hero section styles */
+/* Hero section with boho flowers overlay */
 .hero {
-  background-color: #b2dfdb;
+  background-color: #f8f5f2;
   text-align: center;
-  padding: 2px 6px;    /* Extra small padding for a very thin box */
+  padding: 12px 8px;
   margin-bottom: 20px;
-  border-radius: 8px;  /* Less curved corners */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow */
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(168, 107, 50, 0.10);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #e2c9b0;
 }
 .hero h1 {
-  margin-bottom: 4px;  /* Less space under the headline */
+  margin-bottom: 4px;
+  font-family: 'Georgia', serif;
+  color: #451b04;
+}
+.hero p {
+  color: #8faab3;
+  font-size: 1.1em;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Blurred and faded flowers background for the hero section */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('flowers.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(2px);
+  opacity: 0.3; /* Very faded for boho softness */
+  z-index: 0;
+}
+
+/* Make sure the text stays above the background image */
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
 }
 
 /* Call-to-action section styles */
 .cta {
-  background-color: #e6f4ea;
+  background-color: #f3e9e0;
   text-align: center;
-  padding: 24px 10px;
+  padding: 28px 12px;
   margin-top: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(168, 107, 50, 0.10);
+  border: 2px solid #e2c9b0;
+}
+.cta p {
+  color: #a86b32;
+  font-size: 1.2em;
+  margin-bottom: 16px;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
 }
 .cta-button {
   display: inline-block;
-  background-color: #388e3c;
+  background-color: #a86b32;
   color: #fff;
   padding: 12px 28px;
-  border-radius: 6px;
+  border-radius: 24px;
   text-decoration: none;
-  font-size: 1.1em;
-  margin-top: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  border: none;
 }
 .cta-button:hover {
-  background-color: #2e7d32;
+  background-color: #81b14f;
+  transform: translateY(-2px);
 }
 
 /* Style for the card container */
 .card-container {
   /* By default, cards stack vertically (mobile-first) */
   display: block;
+  text-align: center;
   padding: 16px;
 }
 
 /* Style for each card */
 .card {
+  display: block;
   background-color: #e6f4ea; /* Light green background */
   border-radius: 8px;        /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow */
   margin-bottom: 16px;       /* Space between cards */
   padding: 16px;
-  text-align: center;        /* Center text and image */
+  transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+  border: none;
 }
 
 /* Hide the description by default */
@@ -77,16 +187,15 @@ nav ul li a {
   display: none;
 }
 
-/* Add a hover effect to the destination cards */
+/* Show description and change background on hover */
 .card:hover {
   box-shadow: 0 8px 16px rgba(46, 125, 50, 0.2); /* Bigger shadow on hover */
   transform: translateY(-8px);                    /* Lift the card up a bit */
-  transition: box-shadow 0.3s, transform 0.3s;    /* Smooth animation */
-  background-color: #d0f5df; /* Light green background */
+  background-color: #d0f5df;
 }
 
 .card:hover p {
-  display: block;            /* Show the description on hover */
+  display: block;
   margin-top: 12px;
 }
 
@@ -94,34 +203,31 @@ nav ul li a {
 .card img {
   width: 100%;         /* Image fills the width of the card */
   height: 320px;       /* Make images taller (longer) */
-  max-width: 100%;
   object-fit: cover;   /* Crop images to fill the box without stretching */
-  border-radius: 6px;  /* Rounded corners for images */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
-
 /* Responsive design for screens 600px and wider */
 @media (min-width: 600px) {
   .hero {
     padding: 12px 8px; /* Smaller padding for a thinner hero section on larger screens */
-  }
-  .cta {
-    padding: 36px 10px;
-  }
 }
-
+}
 /* Desktop layout: cards align horizontally */
 @media (min-width: 700px) {
   .card-container {
     display: flex;           /* Use Flexbox for horizontal layout */
-    gap: 16px;               /* Space between cards */
     justify-content: center; /* Center cards horizontally */
+    gap: 16px;               /* Space between cards */
   }
   .card {
     flex: 1;                 /* Cards take equal width */
     max-width: 300px;        /* Limit card width */
     margin-bottom: 0;        /* Remove bottom margin */
   }
+}
+}
+/* Make the hero section description and Eco-Friendly Destinations description #8faab3 */
+.hero p,
+.card-container + h2,
+.card p {
+  color: #8faab3;
 }
