@@ -1,0 +1,127 @@
+/* Header and navigation styles */
+header {
+  background-color: #2e7d32;
+  padding: 15px 0;
+  border-radius: 8px; /* Less curved corners */
+  margin-bottom: 24px; /* Space below the header */
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero section styles */
+.hero {
+  background-color: #b2dfdb;
+  text-align: center;
+  padding: 2px 6px;    /* Extra small padding for a very thin box */
+  margin-bottom: 20px;
+  border-radius: 8px;  /* Less curved corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow */
+}
+.hero h1 {
+  margin-bottom: 4px;  /* Less space under the headline */
+}
+
+/* Call-to-action section styles */
+.cta {
+  background-color: #e6f4ea;
+  text-align: center;
+  padding: 24px 10px;
+  margin-top: 32px;
+}
+.cta-button {
+  display: inline-block;
+  background-color: #388e3c;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.1em;
+  margin-top: 12px;
+}
+.cta-button:hover {
+  background-color: #2e7d32;
+}
+
+/* Style for the card container */
+.card-container {
+  /* By default, cards stack vertically (mobile-first) */
+  display: block;
+  padding: 16px;
+}
+
+/* Style for each card */
+.card {
+  background-color: #e6f4ea; /* Light green background */
+  border-radius: 8px;        /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow */
+  margin-bottom: 16px;       /* Space between cards */
+  padding: 16px;
+  text-align: center;        /* Center text and image */
+}
+
+/* Hide the description by default */
+.card p {
+  display: none;
+}
+
+/* Add a hover effect to the destination cards */
+.card:hover {
+  box-shadow: 0 8px 16px rgba(46, 125, 50, 0.2); /* Bigger shadow on hover */
+  transform: translateY(-8px);                    /* Lift the card up a bit */
+  transition: box-shadow 0.3s, transform 0.3s;    /* Smooth animation */
+  background-color: #d0f5df; /* Light green background */
+}
+
+.card:hover p {
+  display: block;            /* Show the description on hover */
+  margin-top: 12px;
+}
+
+/* Responsive images for all cards */
+.card img {
+  width: 100%;         /* Image fills the width of the card */
+  height: 320px;       /* Make images taller (longer) */
+  max-width: 100%;
+  object-fit: cover;   /* Crop images to fill the box without stretching */
+  border-radius: 6px;  /* Rounded corners for images */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive design for screens 600px and wider */
+@media (min-width: 600px) {
+  .hero {
+    padding: 12px 8px; /* Smaller padding for a thinner hero section on larger screens */
+  }
+  .cta {
+    padding: 36px 10px;
+  }
+}
+
+/* Desktop layout: cards align horizontally */
+@media (min-width: 700px) {
+  .card-container {
+    display: flex;           /* Use Flexbox for horizontal layout */
+    gap: 16px;               /* Space between cards */
+    justify-content: center; /* Center cards horizontally */
+  }
+  .card {
+    flex: 1;                 /* Cards take equal width */
+    max-width: 300px;        /* Limit card width */
+    margin-bottom: 0;        /* Remove bottom margin */
+  }
+}
